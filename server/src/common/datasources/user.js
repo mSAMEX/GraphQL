@@ -8,7 +8,7 @@ class UserAPI extends RESTDataSource {
 	constructor() {
 		super();
 		this.baseURL = config.barongURL;
-		this.baseInternalURL = config.barongInternalURL || 'http://barong:8001/api/v2/';
+		this.baseInternalURL = config.barongInternalURL || 'http://barong:8080/api/v2/';
 	}
 
 	async login({ email, password, otp_code }) {
