@@ -6,7 +6,7 @@ const pubStream = require('./publicStream');
 const privStream = require('./privateStream');
 
 async function streams(pubsub) {
-    let response = await fetch(`${config.peatioInternalURL || 'http://peatio:8000/api/v2/'}public/markets`, {
+    let response = await fetch(`${config.peatioInternalURL || 'http://peatio:3000/api/v2/'}public/markets`, {
         method: 'GET',
         mode: 'cors',
         cache: 'no-cache',
