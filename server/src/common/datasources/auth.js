@@ -10,7 +10,7 @@ class AuthAPI extends RESTDataSource {
 	constructor() {
 		super();
 		this.baseURL = config.barongURL;
-		this.baseInternalURL = config.barongInternalURL || 'http://barong:8080/api/v2/';
+		this.baseInternalURL = config.barongInternalURL || 'https://tr.msamex.com/api/v2/barong/';
 	}
 
 	getUrlHeaders(_barong_session, headers) {
