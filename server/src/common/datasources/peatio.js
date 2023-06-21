@@ -373,7 +373,7 @@ class PeatioAPI extends RESTDataSource {
 						'User-Agent': 'Exchange/proxy',
 						Cookie: `_barong_session=${_barong_session}`
 					};
-		const response = await fetch(`${baseURL}account/deposit_address/${params.currency}`, {
+		const response = await fetch(`${baseURL}account/deposit_address/${params.currency}?blockchain_key=${params.blockchain}`, {
 			method: 'GET',
 			mode: 'cors',
 			cache: 'no-cache',
