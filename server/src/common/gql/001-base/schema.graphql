@@ -255,6 +255,7 @@ type OrderHistory {
 type DepositAddress {
 	currency: String
 	address: String
+	blockchain: String
 }
 
 type AskBid {
