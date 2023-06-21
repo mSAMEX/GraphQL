@@ -182,7 +182,7 @@ module.exports = {
 				},
 				getDepositAddress: async (_, { _barong_session, currency }, { dataSources, headers }) => {
 					const address = await dataSources.peatioAPI.getDepositAddress(
-						{ _barong_session, currency },
+						{ _barong_session, currency, blockchain },
 						headers
 					);
 					if (address.errors) {
