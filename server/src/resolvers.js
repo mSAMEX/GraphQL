@@ -191,8 +191,8 @@ module.exports = {
 						updated_at: Number((new Date(m.updated_at).getTime() / 1000).toFixed(0))
 					}));
 				},
-				getDepositAddress: async (_, { _barong_session, currency }, { dataSources }) => {
-					const address = await dataSources.peatioAPI.getDepositAddress({ _barong_session, currency });
+				getDepositAddress: async (_, { _barong_session, currency, blockchain }, { dataSources }) => {
+					const address = await dataSources.peatioAPI.getDepositAddress({ _barong_session, currency, blockchain });
 					if (address.errors) {
 						throw new ApolloError(address.errors.join(','), address.status);
 					}
