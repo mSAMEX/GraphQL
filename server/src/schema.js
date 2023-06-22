@@ -41,7 +41,7 @@ const typeDefs = gql`
 			order_by: String
 		): [Trade]
 		getPhones(_barong_session: String!): [Phone]
-		getDepositAddress(_barong_session: String!, currency: String!): DepositAddress
+		getDepositAddress(_barong_session: String!, currency: String!, blockchain: String!): DepositAddress
 		getBeneficiaries(_barong_session: String!, currency: String): [Beneficiary]
 		getDepositHistory(
 			_barong_session: String!
