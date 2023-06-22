@@ -180,7 +180,7 @@ module.exports = {
 						updated_at: Number((new Date(m.updated_at).getTime()).toFixed(0))
 					}));
 				},
-				getDepositAddress: async (_, { _barong_session, currency }, { dataSources, headers }) => {
+				getDepositAddress: async (_, { _barong_session, currency, blockchain }, { dataSources, headers }) => {
 					const address = await dataSources.peatioAPI.getDepositAddress(
 						{ _barong_session, currency, blockchain },
 						headers
