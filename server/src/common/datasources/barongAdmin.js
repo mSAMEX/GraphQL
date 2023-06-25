@@ -8,7 +8,7 @@ class BarongAdminAPI extends RESTDataSource {
 	constructor() {
 		super();
 		this.baseURL = config.barongURL;
-		this.internalURL = config.barongInternalURL || 'https://tr.msamex.com/api/v2/barong/';
+		this.internalURL = config.barongInternalURL || 'https://www.msamex.com/api/v2/barong/';
 	}
 
 	getPaginationHeaders(response) {
