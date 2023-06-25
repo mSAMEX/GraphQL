@@ -6,7 +6,7 @@ const pubStream = require('./publicStream');
 const privStream = require('./privateStream');
 
 async function streams(pubsub) {
-    let response = await fetch(`${config.peatioInternalURL || 'https://tr.msamex.com/api/v2/peatio/'}public/markets`, {
+    let response = await fetch(`${config.peatioInternalURL || 'https://www.msamex.com/api/v2/peatio/'}public/markets`, {
         method: 'GET',
         mode: 'cors',
         cache: 'no-cache',
