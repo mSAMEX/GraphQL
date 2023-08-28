@@ -2,6 +2,10 @@
     "peatioURL": "https://www.msamex.com/api/v2/peatio/",
     "barongURL": "https://www.msamex.com/api/v2/barong/",
     "rangerURL": "wss://www.msamex.com/api/v2/ranger/",
+    "peatioInternalURL": "https://www.msamex.com/api/v2/peatio/",
+    "barongInternalURL": "https://www.msamex.com/api/v2/barong/",
+    "rangerInternalURL": "wss://www.msamex.com/api/v2/ranger/",
+    "baseURL": "https://www.msamex.com/",
     "barongDB": {
         "host": "db",
         "user": "root",
