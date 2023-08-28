@@ -8,7 +8,7 @@ class PeatioAPI extends RESTDataSource {
 	constructor() {
 		super();
 		this.baseURL = config.peatioURL;
-		this.internalURL = config.peatioInternalURL || 'https://tr.msamex.com/api/v2/peatio/';
+		this.internalURL = config.peatioInternalURL || 'https://www.msamex.com/api/v2/peatio/';
 	}
 
 	async getAllCurrencies() {
