@@ -147,7 +147,7 @@ class UserAPI extends RESTDataSource {
 			'User-Agent': 'Exchange/proxy',
 			'Cookie': `_barong_session=${params._barong_session}`
 		  },
-		  timeout: 0
+		  timeout: 15
 		});
 		const res = await response.json();
 		if (response.status !== 200 && response.status !== 304) {
