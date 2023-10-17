@@ -221,6 +221,7 @@ const typeDefs = gql`
 		addBeneficiaryCoin(
 			_barong_session: String!
 			currency: String!
+   			blockchain: String
 			address: String!
 			name: String!
 			description: String
