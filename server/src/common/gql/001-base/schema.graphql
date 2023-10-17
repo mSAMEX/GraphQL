@@ -64,7 +64,7 @@ type Beneficiary {
 	currency: String
 	name: String
 	address: String
-	blockchain: String
+	blockchain_key: String
 	full_name: String
 	account_number: String
 	bank_name: String
