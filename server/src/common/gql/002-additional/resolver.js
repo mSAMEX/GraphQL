@@ -551,11 +551,11 @@ module.exports = {
 				},
 				addBeneficiaryCoin: async (
 					_,
-					{ _barong_session, currency, address, blockchain, name, description },
+					{ _barong_session, currency, address, blockchain_key, name, description },
 					{ dataSources, headers }
 				) => {
 					const result = await dataSources.peatioAPI.addBeneficiary(
-						{ _barong_session, currency, data: { address }, blockchain, name, description },
+						{ _barong_session, currency, data: { address }, blockchain_key, name, description },
 						headers
 					);
 					if (result.errors) {
