@@ -565,7 +565,7 @@ module.exports = {
 				},
 				addBeneficiaryCoin: async (
 					_,
-					{ _barong_session, currency, blockchain_key, address, name, description },
+					{ _barong_session, currency, blockchain_key, address, otp, name, description },
 					{ dataSources }
 				) => {
 					const result = await dataSources.peatioAPI.addBeneficiary({
@@ -573,6 +573,7 @@ module.exports = {
 						currency,
 						blockchain_key,
 						data: { address },
+						otp,
 						name,
 						description
 					});
