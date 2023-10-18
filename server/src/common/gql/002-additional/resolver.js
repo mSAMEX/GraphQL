@@ -555,7 +555,7 @@ module.exports = {
 					{ dataSources, headers }
 				) => {
 					const result = await dataSources.peatioAPI.addBeneficiary(
-						{ _barong_session, currency, blockchain_key, data: { address }, top, name, description },
+						{ _barong_session, currency, blockchain_key, data: { address }, otp, name, description },
 						headers
 					);
 					if (result.errors) {
