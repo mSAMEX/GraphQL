@@ -223,6 +223,7 @@ const typeDefs = gql`
 			currency: String!
    			blockchain_key: String
 			address: String!
+   			otp: String
 			name: String!
 			description: String
 		): Beneficiary
