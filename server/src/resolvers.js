@@ -671,7 +671,7 @@ module.exports = {
 				},
 				createWithdrawal: async (
 					_,
-					{ _barong_session, otp, beneficiary_id, currency, amount, note },
+					{ _barong_session, otp, beneficiary_id, currency, amount, blockchain_key, note },
 					{ dataSources }
 				) => {
 					const result = await dataSources.peatioAPI.createWithdrawal({
@@ -680,6 +680,7 @@ module.exports = {
 						beneficiary_id,
 						currency,
 						amount,
+						blockchain_key,
 						note
 					});
 					if (result.errors) {
