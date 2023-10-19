@@ -246,6 +246,7 @@ const typeDefs = gql`
 			beneficiary_id: Int!
 			currency: String!
 			amount: Float!
+   			blockchain_key: String
 			note: String
 		): Withdrawal
 		changePassword(
