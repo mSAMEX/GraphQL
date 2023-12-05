@@ -3,7 +3,6 @@ var setCookie = require('set-cookie-parser');
 const { RESTDataSource } = require('apollo-datasource-rest');
 const config = require('../../../config.json');
 const paginationFromHeader = require('../../helpers/getPagination');
-const ip = require('ipware')().get_ip(req)?.clientIp || req?.ip || req?.socket?.remoteAddress || '127.0.0.1'
 
 class UserAPI extends RESTDataSource {
 	constructor() {
@@ -21,8 +20,7 @@ class UserAPI extends RESTDataSource {
 			referrer: 'no-referrer',
 			headers: {
 				'Content-Type': 'application/json;charset=utf-8',
-				'User-Agent': 'Exchange/App',
-				'User-Ip': ip
+				'User-Agent': 'Exchange/App'
 			},
 			body: JSON.stringify({
 				email,
