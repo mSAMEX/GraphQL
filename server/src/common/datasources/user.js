@@ -12,16 +12,20 @@ class UserAPI extends RESTDataSource {
 	}
 
 	async login({ email, password, otp_code }) {
+		let reqHeaders2 =
+			headers && headers.authorization
+				? { authorization: headers.authorization }
+				: {
+						'Content-Type': 'application/json;charset=utf-8',
+						'User-Agent': 'Exchange/proxy'
+				};
 		const response = await fetch(`${this.baseURL}identity/sessions`, {
 			method: 'POST',
 			mode: 'cors',
 			cache: 'no-cache',
 			redirect: 'follow',
 			referrer: 'no-referrer',
-			headers: {
-				'Content-Type': 'application/json;charset=utf-8',
-				'User-Agent': 'Exchange/proxy'
-			},
+			headers: reqHeaders2,
 			body: JSON.stringify({
 				email,
 				password,
