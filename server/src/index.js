@@ -52,6 +52,7 @@ const server = new ApolloServer({
 		// console.log('PATH', req.path);
 		const headers = req ? req.headers : {};
 		let _barong_session = '';
+		const ip = require('ipware')().get_ip(req);
 		let user = null;
 		// console.log("headers.authorization",  headers.authorization);
 		// console.log("Input HEADERS:", headers);
