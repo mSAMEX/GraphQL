@@ -56,6 +56,8 @@ const server = new ApolloServer({
 		let user = null;
 		// console.log("headers.authorization",  headers.authorization);
 		 console.log("Input HEADERS:", headers);
+				 console.log("IP:", ip);
+
 		if (jwtPublicKey && headers.authorization) {
 			let a = headers.authorization.split(' ')[1];
 			user = jwt.verify(a, jwtPublicKey);
