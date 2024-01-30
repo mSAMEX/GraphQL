@@ -3,6 +3,7 @@ var setCookie = require('set-cookie-parser');
 const { RESTDataSource } = require('apollo-datasource-rest');
 const config = require('../../../config.json');
 const paginationFromHeader = require('../../helpers/getPagination');
+const ip = require('ipware')().get_ip(req)?.clientIp || req?.ip || req?.socket?.remoteAddress || '127.0.0.1'
 
 class UserAPI extends RESTDataSource {
 	constructor() {
@@ -12,20 +13,17 @@ class UserAPI extends RESTDataSource {
 	}
 
 	async login({ email, password, otp_code }) {
-		let reqHeaders2 =
-			headers && headers.authorization
-				? { authorization: headers.authorization }
-				: {
-						'Content-Type': 'application/json;charset=utf-8',
-						'User-Agent': 'Exchange/proxy'
-					};
 		const response = await fetch(`${this.baseURL}identity/sessions`, {
 			method: 'POST',
 			mode: 'cors',
 			cache: 'no-cache',
 			redirect: 'follow',
 			referrer: 'no-referrer',
-			headers: reqHeaders2,
+			headers: {
+				'Content-Type': 'application/json;charset=utf-8',
+				'User-Agent': 'Exchange/App'
+				'HTTP_TRUE_CLIENT_IP': ${ip}
+			},
 			body: JSON.stringify({
 				email,
 				password,
@@ -140,7 +138,7 @@ class UserAPI extends RESTDataSource {
 	// }
 	async getActivityHistory(params) {
 		const query = `?page=${params.page || 1}&limit=${params.limit || 25}`;
-		const response = await fetch(`${this.baseURL}resource/users/activity/${params.topic.toLowerCase()}${query}`, {
+		const response = await fetch(`${this.baseURL}resource/users/activity/all${query}`, {
 		  method: 'GET',
 		  mode: 'cors',
 		  cache: 'no-cache',
