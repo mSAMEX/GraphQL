@@ -21,8 +21,8 @@ class UserAPI extends RESTDataSource {
 			referrer: 'no-referrer',
 			headers: {
 				'Content-Type': 'application/json;charset=utf-8',
-				'User-Agent': 'Exchange/App'
-				'HTTP_TRUE_CLIENT_IP': ${ip}
+				'User-Agent': 'Exchange/App',
+				'HTTP_TRUE_CLIENT_IP': `${ip}`
 			},
 			body: JSON.stringify({
 				email,
