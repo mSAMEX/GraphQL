@@ -35,6 +35,14 @@ const dataSources = () => ({ ...commonAPI, ...customAPI });
 // Set up Apollo Server
 const app = express();
 app.use(cors({ credentials: true }))
+
+// Middleware to capture IP address
+app.use((req, res, next) => {
+	req.ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	next();
+  });
+
+
 const server = new ApolloServer({
 	typeDefs,
 	resolvers,
@@ -52,11 +60,12 @@ const server = new ApolloServer({
 		// console.log('PATH', req.path);
 		const headers = req ? req.headers : {};
 		let _barong_session = '';
-		const ip = require('ipware')().get_ip(req);
+		// const ip = require('ipware')().get_ip(req);
 		let user = null;
+		const ipAddress = req ? req.ipAddress : null;
 		// console.log("headers.authorization",  headers.authorization);
-		 console.log("Input HEADERS:", headers);
-				 console.log("IP:", ip);
+		//  console.log("Input HEADERS:", headers);
+		// 		 console.log("IP:", ip);
 
 		if (jwtPublicKey && headers.authorization) {
 			let a = headers.authorization.split(' ')[1];
