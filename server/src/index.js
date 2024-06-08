@@ -38,7 +38,7 @@ app.use(cors({ credentials: true }))
 
 // Middleware to capture IP address
 app.use((req, res, next) => {
-	req.ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	req.ipAddress = req.headers['x-real-ip'] || req.connection.remoteAddress;
 	next();
   });
 
